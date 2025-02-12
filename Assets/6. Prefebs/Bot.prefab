@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1396158737901610209}
   - component: {fileID: 1396158737901610214}
   - component: {fileID: 2021538750}
-  - component: {fileID: 3518220327490030549}
+  - component: {fileID: -4650727301937348631}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -145,8 +145,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &3518220327490030549
-CircleCollider2D:
+--- !u!61 &-4650727301937348631
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -158,6 +158,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2}
+  m_Offset: {x: -0.044214725, y: 0.85266674}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.7069987, y: 1.7053334}
+    newSize: {x: 1.7069987, y: 1.7053334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.20727253
+  m_Size: {x: 0.8116493, y: 1.7053335}
+  m_EdgeRadius: 0
