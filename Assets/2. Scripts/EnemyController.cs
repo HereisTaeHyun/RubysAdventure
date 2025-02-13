@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     public float changeTime = 2.0f;
     public float moveSpeed = 2.0f;
     public bool vertical;
+    public ParticleSystem smokeEffect;
+    public ParticleSystem crashEffect;
 
     // private 변수
     private float moveTimer;
@@ -76,6 +78,7 @@ public class EnemyController : MonoBehaviour
             broken = false;
             rb.simulated = false;
             anim.SetTrigger("Fixed");
+            smokeEffect.Stop();
         }
         else
         {
