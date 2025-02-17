@@ -74,7 +74,7 @@ public class RubyController : MonoBehaviour
             anim.SetTrigger("Hit");
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth); // currentHealth + amount = 제한 값으로 이 값이 0 ~ maxHealth에 있게됨
-        Debug.Log($"{currentHealth} / {maxHealth}");
+        UIHealthBar.instance.setValue(currentHealth / (float)maxHealth);
     }
 
     private void Launch()
