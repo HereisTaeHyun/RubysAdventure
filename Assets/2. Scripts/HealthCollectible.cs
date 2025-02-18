@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
+    public AudioClip collectedClip;
     void Start()
     {
         
@@ -23,6 +24,7 @@ public class HealthCollectible : MonoBehaviour
             {
                 rubyController.ChangeHealth(1);
                 Destroy(gameObject); 
+                rubyController.PlaySound(collectedClip);
             }
         }
     }

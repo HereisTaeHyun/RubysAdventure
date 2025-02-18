@@ -103,6 +103,8 @@ MonoBehaviour:
   moveSpeed: 3
   maxHealth: 5
   projectilePrefeb: {fileID: 8888075854188831326, guid: b6976a32ff4e32049aa65296a7a7db5c, type: 3}
+  throwClip: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
+  hitClip: {fileID: 8300000, guid: 9b1bb1f450b7d444fa4a8019d13519a7, type: 3}
   timeInvincible: 2
 --- !u!50 &1308130455810122314
 Rigidbody2D:

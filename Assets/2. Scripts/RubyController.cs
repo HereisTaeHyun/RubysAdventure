@@ -11,6 +11,8 @@ public class RubyController : MonoBehaviour
     public int maxHealth = 5;
     public int health{get{return currentHealth;}}
     public GameObject projectilePrefeb;
+    public AudioClip throwClip;
+    public AudioClip hitClip;
 
     public float timeInvincible = 2.0f;
     bool isInvincible;
@@ -19,7 +21,8 @@ public class RubyController : MonoBehaviour
     private int currentHealth;
     private Vector2 position;
     private Vector2 lookDir = new Vector2(1, 0);
-    Animator anim;
+    private Animator anim;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class RubyController : MonoBehaviour
         // currentHealth = maxHealth;
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -82,6 +86,7 @@ public class RubyController : MonoBehaviour
         if(amount < 0)
         {
             anim.SetTrigger("Hit");
+            PlaySound(hitClip);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth); // currentHealth + amount = 제한 값으로 이 값이 0 ~ maxHealth에 있게됨
         UIHealthBar.instance.setValue(currentHealth / (float)maxHealth);
@@ -93,5 +98,11 @@ public class RubyController : MonoBehaviour
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(lookDir, THROW_POWER);
         anim.SetTrigger("Launch");
+        PlaySound(throwClip);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public bool vertical;
     public ParticleSystem smokeEffect;
     public ParticleSystem crashEffect;
+    public AudioSource audioSource;
+    public AudioClip fixedClip;
 
     // private 변수
     private float moveTimer;
@@ -16,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private bool broken;
     private Vector2 pos;
     private int fixedCount;
+    private RubyController rubyController;
     Rigidbody2D rb;
     Animator anim;
 
@@ -28,6 +31,8 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         broken = true;
         fixedCount = 0;
+        audioSource = GetComponent<AudioSource>();
+        rubyController = GameObject.FindGameObjectWithTag("Player").GetComponent<RubyController>();
     }
 
     // Update is called once per frame
@@ -78,7 +83,9 @@ public class EnemyController : MonoBehaviour
             broken = false;
             rb.simulated = false;
             anim.SetTrigger("Fixed");
+            rubyController.PlaySound(fixedClip);
             smokeEffect.Stop();
+            audioSource.clip = null;
         }
         else
         {
