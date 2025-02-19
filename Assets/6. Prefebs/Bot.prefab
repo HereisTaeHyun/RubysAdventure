@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4073152670389404411}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,9 @@ MonoBehaviour:
   vertical: 0
   smokeEffect: {fileID: 678090315042363939}
   crashEffect: {fileID: 6277274029431951636, guid: ab776e81585fb3846badaba76a49cd64, type: 3}
+  audioSource: {fileID: 0}
   fixedClip: {fileID: 8300000, guid: e7fa1971a86d60945bb64585c0ac14d5, type: 3}
+  completeClip: {fileID: 8300000, guid: f987bfc0b774d3f4e82dc47e91f78584, type: 3}
 --- !u!50 &1396158737901610214
 Rigidbody2D:
   serializedVersion: 4

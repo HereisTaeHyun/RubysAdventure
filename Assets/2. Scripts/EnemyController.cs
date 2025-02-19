@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem crashEffect;
     public AudioSource audioSource;
     public AudioClip fixedClip;
+    public AudioClip completeClip;
 
     // private 변수
     private float moveTimer;
@@ -86,6 +87,16 @@ public class EnemyController : MonoBehaviour
             rubyController.PlaySound(fixedClip);
             smokeEffect.Stop();
             audioSource.clip = null;
+
+            // NPC에게 로봇 수리 상황 전달
+            NonPlayerCharacter jambi = GameObject.FindGameObjectWithTag("JAMBI").GetComponent<NonPlayerCharacter>();
+            jambi.NoticeRobotFixed();
+
+            // 로봇이 모두 fix라면
+            if(jambi.leftRobots == 0)
+            {
+                rubyController.PlaySound(completeClip);
+            }
         }
         else
         {
